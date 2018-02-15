@@ -19,16 +19,30 @@ class App extends Component {
     this.compute = this.compute.bind(this);
   }
 
-  compute() {
+  buildSnippet() {
     const snippetContent = {}
-    snippetContent.body = this.state.body.split('\n');
     snippetContent.prefix = this.state.prefix;
+    snippetContent.body = this.state.body.split('\n');
     snippetContent.description = this.state.description;
 
-    const snippetObject = { [this.state.name]: snippetContent };
+    return { [this.state.name]: snippetContent };
+  }
 
-    const result = JSON.stringify(snippetObject, null, 2);
-    const resultWithFakeSpaces = result.replace(/ /g, space);
+  convertSnippetToString(snippetObject) {
+    const prettySnippet = JSON.stringify(snippetObject, null, 2);
+    const prettySnippetArray = prettySnippet.split('\n');
+    prettySnippetArray.pop();
+    prettySnippetArray.shift();
+    const deindentedSnippet = prettySnippetArray.map((line) => line.replace(/^  /g, ''));
+
+    return deindentedSnippet.join('\n');
+  }
+
+  compute() {
+    const snippetObject = this.buildSnippet()
+    const stringSnippet = this.convertSnippetToString(snippetObject);
+    const resultWithFakeSpaces = stringSnippet.replace(/ /g, space);
+
     this.setState({...this.state, result: resultWithFakeSpaces});
   }
 
