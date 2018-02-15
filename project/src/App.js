@@ -52,10 +52,27 @@ class App extends Component {
           <h1 className="App-title">VSSnippeteer</h1>
         </header>
         <div className="App-body">
-          <textarea className="code-area" value={this.state.value} onChange={this.onChange.bind(this)}/>
-          <div className="button" onClick={this.compute.bind(this)}>OK</div>
-          <hr/>
-          <div>VSCode snippet:</div>
+          <div className="text-area-container">
+            <div>
+              <label className="label">Name</label>
+              <input className="input-text margin-bottom" type="text" />
+            </div>
+            <div>
+              <label className="label">Prefix</label>
+              <input className="input-text margin-bottom" type="text" />
+            </div>
+            <div>
+              <label className="label">Code</label>
+              <textarea className="code-area input-text" value={this.state.value} onChange={this.onChange.bind(this)}/>
+            </div>
+            <div>
+              <label className="label">Description</label>
+              <input className="input-text margin-bottom" type="text" />
+            </div>
+          </div>
+          <div className="buttonContainer">
+            <div className="button" onClick={this.compute.bind(this)}>Generate</div>
+          </div>
           <div className="text-result" style={{ whiteSpace: 'pre-line' }}>{this.state.result}</div>
         </div>
       </div>
