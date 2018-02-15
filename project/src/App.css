@@ -47,15 +47,6 @@
   margin-bottom: 15px;
 }
 
-.text-result {
-  text-align: left;
-  width: 100%;
-  font-family: monospace;
-  border: solid 1px #add2b7;
-  border-radius: 5px;
-  padding: 10px;
-}
-
 .text-area-container {
   width: 100%;
 }
@@ -91,6 +82,41 @@
 }
 
 .shortcut-hint {
+  font-size: 12px;
+  color: #b1b1b1;
+}
+
+.text-result-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.text-result {
+  text-align: left;
+  width: 100%;
+  font-family: monospace;
+  border: solid 1px #add2b7;
+  border-radius: 5px;
+  padding: 10px;
+  flex: 1;
+}
+
+.text-result:hover {
+  border: solid 3px #add2b7;
+}
+
+.text-result:active {
+  border: solid 3px #add2b7;
+  background-color: #e9ffef;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.copy-hint {
   font-size: 12px;
   color: #b1b1b1;
 }

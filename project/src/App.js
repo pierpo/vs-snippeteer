@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Hotkeys from 'react-hot-keys';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const space = '\u00a0';
 
@@ -84,7 +85,14 @@ class App extends Component {
             <div className="shortcut-hint">CTRL+Enter</div>
           </div>
           </Hotkeys>
-          <div className="text-result" style={{ whiteSpace: 'pre-line' }}>{this.state.result}</div>
+          <div className="text-result-container">
+            <div className="copy-hint">
+              Click on the box to copy!
+            </div>
+            <CopyToClipboard text={this.state.result}>
+              <div className="text-result clickable" style={{ whiteSpace: 'pre-line' }}>{this.state.result}</div>
+            </CopyToClipboard>
+          </div>
         </div>
       </div>
     );
