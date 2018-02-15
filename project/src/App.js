@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Hotkeys from 'react-hot-keys';
 
 const space = '\u00a0';
 
@@ -15,6 +16,7 @@ class App extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
+    this.compute = this.compute.bind(this);
   }
 
   compute() {
@@ -62,9 +64,12 @@ class App extends Component {
               <input className="input-text margin-bottom" onChange={this.onChange('description')} type="text" />
             </div>
           </div>
+          <Hotkeys keyName="ctrl+enter" onKeyDown={this.compute}>
           <div className="buttonContainer">
-            <div className="button" onClick={this.compute.bind(this)}>Generate</div>
+            <div className="button" onClick={this.compute}>Generate</div>
+            <div className="shortcut-hint">CTRL+Enter</div>
           </div>
+          </Hotkeys>
           <div className="text-result" style={{ whiteSpace: 'pre-line' }}>{this.state.result}</div>
         </div>
       </div>

@@ -32,6 +32,8 @@
 
 .input-text {
   border: solid 1px #e4e4e4;
+  border-radius: 5px;
+  padding: 5px;
   font-family: monospace;
   width: 100%;
 }
@@ -50,6 +52,7 @@
   width: 100%;
   font-family: monospace;
   border: solid 1px #add2b7;
+  border-radius: 5px;
   padding: 10px;
 }
 
@@ -79,8 +82,15 @@
 .buttonContainer {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .label {
   text-align: left;
+}
+
+.shortcut-hint {
+  font-size: 12px;
+  color: #b1b1b1;
 }
