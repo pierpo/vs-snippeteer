@@ -58,7 +58,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">VSSnippeteer</h1>
+          <h1 className="App-title">VS-Snippeteer</h1>
+          <div className="center">Generate VSCode snippets painlessly :)</div>
         </header>
         <div className="App-body">
           <div className="text-area-container">
