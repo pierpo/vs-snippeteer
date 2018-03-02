@@ -34,7 +34,7 @@ class App extends Component {
     const prettySnippetArray = prettySnippet.split('\n');
     prettySnippetArray.pop();
     prettySnippetArray.shift();
-    const deindentedSnippet = prettySnippetArray.map((line) => line.replace(/^  /g, ''));
+    const deindentedSnippet = prettySnippetArray.map((line) => line.replace(/^ {2}/g, ''));
 
     return deindentedSnippet.join('\n');
   }
