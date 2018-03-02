@@ -105,6 +105,7 @@
   border-radius: 5px;
   padding: 10px;
   flex: 1;
+  user-select: none;
 }
 
 .text-result:hover {
