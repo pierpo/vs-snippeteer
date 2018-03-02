@@ -1,6 +1,8 @@
 {
   "name": "snippeter",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://pierpo.github.io/vs-snippeteer",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
