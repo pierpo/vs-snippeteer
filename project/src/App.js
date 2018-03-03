@@ -43,8 +43,9 @@ class App extends Component {
     const snippetObject = this.buildSnippet()
     const stringSnippet = this.convertSnippetToString(snippetObject);
     const resultWithFakeSpaces = stringSnippet.replace(/ /g, space);
+    const resultWithTrailingComma = resultWithFakeSpaces + ',';
 
-    this.setState({...this.state, result: resultWithFakeSpaces});
+    this.setState({...this.state, result: resultWithTrailingComma});
   }
 
   onChange(field) {
